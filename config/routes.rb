@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :services
   # resources :cars
   # get 'sessions/new'
   # get 'sessions/create'
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
     # resources :cars
     # we want all cars belong to users
     resources :cars, only: [:index, :new]
+  end
+
+  resources :cars do
+    resources :services, only: [:index, :new]
   end
 
   resources :cars, only: [:create, :show, :update, :edit, :destroy]

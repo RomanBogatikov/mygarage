@@ -1,6 +1,7 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
+
   # GET /cars
   # GET /cars.json
   def index
@@ -17,7 +18,10 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show
+    puts "show route"
     @car = Car.find(params[:id])
+    @services = Car.find(params[:id]).services
+    puts "services= #{@services}"
   end
 
   # GET /cars/new
@@ -66,10 +70,13 @@ class CarsController < ApplicationController
   # DELETE /cars/1
   # DELETE /cars/1.json
   def destroy
-    @car.destroy
-    respond_to do |format|
-      format.html { redirect_to user_cars_url(user_id: @car.user_id), notice: 'Car was successfully destroyed.' }
-      format.json { head :no_content }
+    # check how to implement protected routes (with this condition not logged in user can't delete a car)
+    if current_user
+      @car.destroy
+      respond_to do |format|
+        format.html { redirect_to user_cars_url(user_id: current_user.id), notice: 'Car was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 

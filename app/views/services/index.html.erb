@@ -1,25 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @car.year %>
-</p>
-
-<p>
-  <strong>Make:</strong>
-  <%= @car.make %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @car.model %>
-</p>
-
-<%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', user_cars_path(user_id: current_user.id) %>
-<%= link_to 'Enter service entry', new_car_service_path(car_id: @car.id) %>
-
-<p>Past services:</p>
+<h1>Services</h1>
 
 <table>
   <thead>
@@ -39,9 +20,14 @@
         <td><%= service.date %></td>
         <td><%= service.mileage %></td>
         <td><%= service.comments %></td>
+        <td><%= link_to 'Show', service %></td>
         <td><%= link_to 'Edit', edit_service_path(service) %></td>
         <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'New Service', new_service_path %>
