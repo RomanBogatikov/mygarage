@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Mygarage</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
 
-    <footer>
-      This is Mygarage site.
-      <%= yield :footer %>
-    </footer>
+      <nav>
+        <%= render "shared/navbar" %>
+      </nav>
+
+      <main>
+        <%= yield %>
+      </main>
+
+      <footer>
+        <span>Handcrafted by Roman Bogatikov</span>
+      </footer>
+
+    </div>
   </body>
 </html>
