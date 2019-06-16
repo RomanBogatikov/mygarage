@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :services
+
   # resources :cars
   # get 'sessions/new'
   # get 'sessions/create'
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :sessions, only: [:new, :create, :destroy]
+
+  resources :services
 
   resources :users do
     # resources :cars
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
     resources :services, only: [:index, :new]
   end
 
-  resources :cars, only: [:create, :show, :update, :edit, :destroy]
+  # resources :cars, only: [:create, :show, :update, :edit, :destroy]
 
 
 

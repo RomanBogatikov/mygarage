@@ -1,10 +1,16 @@
 class CarsController < ApplicationController
+  before_action :require_login
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
 
   # GET /cars
   # GET /cars.json
   def index
+    unless current_user
+      redirect_to root_url
+      return
+    end
+
     puts "/cars index = #{params}"
     # @cars = Car.all
     # @cars = Car.where("user_id = ?", params[:user_id])
@@ -82,6 +88,13 @@ class CarsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def require_login
+      unless current_user
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to root_url # halts request cycle
+      end
+    end
+
     def set_car
       @car = Car.find(params[:id])
     end
