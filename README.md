@@ -1,8 +1,8 @@
 # MyGarageApp
 The app is hosted on Heroku: [MyGarageApp](https://my-awesome-garage.herokuapp.com/)
 
-To better test functionality you can login with:
-email: guest@guest.com
+To better test functionality you can login with:<br/>
+email: guest@guest.com <br/>
 password: 123
 
 ## Description
