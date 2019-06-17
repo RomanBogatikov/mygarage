@@ -1,24 +1,8 @@
-# README
+# MyGarageApp
+The app is hosted on Heroku: [MyGarageApp](https://my-awesome-garage.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+MyGarageApp will help you track all the service records for all of your cars. The app demonstrates implementation of full CRUD, RESTful routes, user authentication.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Technologies used
+Ruby on Rails, ERB, PostgreSQL, styling with Foundation
