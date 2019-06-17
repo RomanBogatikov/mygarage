@@ -14,6 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= //= require foundation
-require_tree .
+//= //= require_tree
 
 $(function(){ $(document).foundation(); });
