@@ -1,5 +1,7 @@
-<h1>New Car</h1>
+<div class="message">
+  <h1>New Car</h1>
 
-<%= render 'form', car: @car %>
+  <%= render 'form', car: @car %>
 
-<%= link_to 'Back', user_cars_path %>
+  <span class="back"><%= link_to '<-BACK', user_cars_path %></span>
+</div>

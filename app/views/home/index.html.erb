@@ -1,5 +1,8 @@
 <% if current_user %>
-
+  <div class="message">
+    <h1>Welcome, <%= current_user.name %></h1>
+    <p>This is your personal garage. By clicking 'My garage' in the navigation bar, you can see the list of your cars. Each car has service records. You have everything you need to keep records.</p>
+  </div>
 <% else %>
   <div class="message">
     <h1>Welcome to MyGarageApp!</h1>
@@ -7,4 +10,6 @@
   </div>
 <% end %>
 
-<p id=”notice”><%= notice %></p>
+<!--
+<#% <p id=”notice”><%= notice %></p> %>
+-->

@@ -1,5 +1,8 @@
-<h1>New User</h1>
 
-<%= render 'form', user: @user %>
+<div class="message">
+  <h1>New User</h1>
 
-<%= link_to 'Back', users_path %>
+  <%= render 'form', user: @user %>
+
+  <span class="back"><%= link_to '<-BACK', root_path %></span>
+</div>

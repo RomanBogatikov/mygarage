@@ -1,24 +1,25 @@
-<p id="alert"><%= alert %></p>
+<div class="message">
+  <p id="alert"><%= alert %></p>
 
-<h1>Login</h1>
+  <h1>Login</h1>
 
-<%= form_tag sessions_path do |form|%>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
+  <%= form_tag sessions_path do |form|%>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </div>
 
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
 
-  <div class="actions">
-    <%= submit_tag "Login" %>
-  </div>
+    <div class="actions">
+      <%= submit_tag "Login" %>
+    </div>
 
-<% end %>
+    <span class="back"><%= link_to '<-BACK', root_path %></span>
 
-<% content_for :footer do %>
-  <p>This is login page</p>
-<% end %>
+  <% end %>
+
+</div>

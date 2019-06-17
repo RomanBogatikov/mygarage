@@ -62,4 +62,19 @@ form {
 
 .message {
   background: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 7px;
+  // to place back link on top left
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+a.button:visited {
+  color: whitesmoke;
 }

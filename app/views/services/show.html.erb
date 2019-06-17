@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="message">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @service.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @service.title %>
+  </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @service.date %>
-</p>
+  <p>
+    <strong>Date:</strong>
+    <%= @service.date %>
+  </p>
 
-<p>
-  <strong>Mileage:</strong>
-  <%= @service.mileage %>
-</p>
+  <p>
+    <strong>Mileage:</strong>
+    <%= @service.mileage %>
+  </p>
 
-<p>
-  <strong>Comments:</strong>
-  <%= @service.comments %>
-</p>
+  <p>
+    <strong>Comments:</strong>
+    <%= @service.comments %>
+  </p>
 
 
-<%= link_to 'Back', car_path(id: @service.car_id) %>
+  <%= link_to 'OK', car_path(id: @service.car_id), class: 'button' %>
+</div>

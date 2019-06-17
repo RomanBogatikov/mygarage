@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :require_admin, except: [:new, :create, :show]
 
   # GET /users
   # GET /users.json
@@ -62,6 +63,20 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def require_admin
+      unless current_user
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to root_url # halts request cycle
+        return
+      end
+
+      unless current_user.email == "ivaroman2000@gmail.com"
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to root_url # halts request cycle
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])

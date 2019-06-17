@@ -1,5 +1,7 @@
-<h1>Editing Service</h1>
+<div class="message">
+  <h1>Editing Service</h1>
 
-<%= render 'form', service: @service %>
+  <%= render 'form', service: @service %>
 
-<%= link_to 'Back', car_path(id: params[:car_id]) %>
+  <span class="back"><%= link_to '<-BACK', car_path(id: params[:car_id]) %></span>
+</div>
