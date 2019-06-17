@@ -11,11 +11,6 @@
     <%= @user.name %>
   </p>
 
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-  <% if current_user %>
-    <%= link_to 'Back', users_path %>
-  <% else %>
-    <%= link_to 'Back', root_path %>
-  <% end %>
+  <%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Back', root_path %>
 
 </div>

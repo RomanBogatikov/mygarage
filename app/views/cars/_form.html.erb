@@ -1,4 +1,4 @@
-<%= form_with(model: car, local: true) do |form| %>
+<%= form_with(model: car, local: true, data: {abide:''}) do |form| %>
   <% if car.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
